@@ -3,7 +3,18 @@
 <h2>Radix Sort</h2>
 <p>The first question when we see the phrase “sorting in linear time” should be – where’s the catch? Indeed there’s a catch and the thing is that we can’t sort just anything in linear time. Most of the time we can speak on sorting integers in linear time, but as we can see later this is not the only case. </p>
 <p>Since we speak about integers, we can think of a faster sorting algorithm than usual. Such an algorithm is the counting sort, which can be very fast in some cases, but also very slow in others, so it can be used carefully. Another linear time sorting algorithm is radix sort.</p>
+
 <h2>Introduction</h2>
+<p>Algorithms always depend on the input. We saw that general purpose sorting algorithms as insertion sort, bubble sort and <a href="http://www.stoimen.com/blog/2012/03/13/computer-algorithms-quicksort/" title="Computer Algorithms: Quicksort">quicksort</a> can be very efficient in some cases and inefficient in other. Indeed <a href="http://www.stoimen.com/blog/2012/02/13/computer-algorithms-insertion-sort/" title="Computer Algorithms: Insertion Sort">insertion</a> and <a href="http://www.stoimen.com/blog/2012/02/20/computer-algorithms-bubble-sort/" title="Computer Algorithms: Bubble Sort">bubble sort</a> are considered slow, with best-case complexity of O(n<sup>2</sup>), but they are quite effective when the input is fairly sorted. Thus when you have a sorted array and you add some “new” values to the array you can sort it quite effectively with insertion sort. On the other hand quicksort is considered one of the best general purpose sorting algorithms, but while it’s a great algorithm when the data is randomized it’s practically as slow as bubble sort when the input is almost or fully sorted. </p>
+
+<p>Now we see that depending on the input algorithms may be effective or not. For almost sorted input insertion sort may be preferred instead of quicksort, which in general is a faster algorithm.</p>
+
+<p>Just because the input is so important for an algorithm efficiency we may ask are there any sorting algorithms that are faster than O(n.log(n)), which is the average-case complexity for merge sort and quicksort. And the answer is yes there are faster, linear complexity algorithms, that can sort data faster than quicksort, merge sort and heapsort. But there are some constraints!</p>
+
+<p>Everything sounds great but the thing is that we can’t sort any particular data with linear complexity, so the question is what rules the input must follow in order to be sorted in linear time.</p>
+
+<p>Such an algorithm that is capable of sorting data in linear O(n) time is radix sort and the domain of the input is restricted – it must consist only of integers.</p>
+
 <p>Count sort is absolutely brilliant and easy to implement. In case we sort integers in the range [n, m] on the first pass we just initialize a zero filled array with length m-n. Than on the second pass we “count” the occurrence of each integer. On the third pass we just sort the integers with an ease. </p>
 <p><img src="https://docs.google.com/drawings/pub?id=1VOyJ9u_sp5YQB6gpt0bcWFOKjYTSugoQWJYRkFFZTLc&amp;w=620&amp;h=399"></p>
 <p>However we have some problems with that algorithm. What if we have only few items to sort that are very far from each other like [2, 1, 10000000, 2]. This will result in a very large unused data. So we need a dense integer sequence. This is important because we must know in advance the nature of the sequence which is rarely sure.</p>
