@@ -20,3 +20,11 @@
 <p>Knuth in other hand proposes his own sequence following the formula (3<sup>k</sup> – 1) / 2 or [1, 4, 14, 40, 121, …]</p>
 <figure id="attachment_2795" style="width: 620px;" class="wp-caption alignnone"><a href="http://www.stoimen.com/blog/wp-content/uploads/2012/02/Knuth-Gap-Sequence.png"><img src="http://www.stoimen.com/blog/wp-content/uploads/2012/02/Knuth-Gap-Sequence.png" alt="Knuth Gap Sequence" title="Knuth Gap Sequence" class="size-full wp-image-2795" width="620"></a><figcaption class="wp-caption-text">Knuth sequence: (1, 4, 13, 40, 121, ...)</figcaption></figure>
 <p>Of course there are many other gap sequences, proposed by various developers and researchers, but the problem is that the effectiveness of the algorithm strongly depends on the input data. But before taking a look to the complexity of Shell sort, let’s see first its implementation.</p>
+
+<h2>Complexity</h2>
+<p>Yet again we can’t determine the exact complexity of this algorithm, because it depends on the gap sequence. However we may say what is the complexity of Shell sort with the sequences of Knuth, Pratt and Donald Shell. For the Shell’s sequence the complexity is O(n<sup>2</sup>), while for the Pratt’s sequence it is O(n*log<sup>2</sup>(n)). The best approach is the Knuth sequence where the complexity is O(n<sup>3/2</sup>), as you can see on the diagram bellow.</p>
+<figure id="attachment_2797" style="width: 620px;" class="wp-caption alignnone"><a href="http://www.stoimen.com/blog/wp-content/uploads/2012/02/Complexity-of-Shell-Sort.png"><img src="http://www.stoimen.com/blog/wp-content/uploads/2012/02/Complexity-of-Shell-Sort.png" alt="Complexity of Shell Sort" title="Complexity of Shell Sort" class="size-full wp-image-2797" width="620"></a><figcaption class="wp-caption-text">Complexity of Shell sort with different gap sequences.</figcaption></figure>
+<h2>Application</h2>
+<p>Well, as insertion sort and bubble sort, Shell sort is not very effective compared to quicksort or merge sort. The good thing is that it is quite easy to implement (not easier than insertion sort), but in general it should be avoided for large data sets. Perhaps the main advantage of Shell sort is that the list can be sorted for a gap greater than 1 and thus making less exchanges than insertion sort. </p>
+
+source : http://www.stoimen.com/blog/2012/02/27/computer-algorithms-shell-sort/
