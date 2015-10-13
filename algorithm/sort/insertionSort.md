@@ -1,0 +1,19 @@
+#PHP-insertion-sort
+
+<h2>Overview</h2>
+<p>Sorted data can dramatically change the speed of our program, therefore sorting algorithms are something quite special in computer science. For instance searching in a sorted list is faster than searching in an unordered list.</p>
+<p>There are two main approaches in sorting – by comparing the elements and without comparing them. A typical algorithm from the first group is insertion sort. This algorithm is very simple and very intuitive to implement, but unfortunately it is not so effective compared to other sorting algorithms as <a href="http://www.stoimen.com/blog/2010/06/18/friday-algorithms-iterative-quicksort/" title="Friday Algorithms: Iterative Quicksort">quicksort</a> and merge sort. Indeed insertion sort is useful for small sets of data with no more than about 20 items.</p>
+<p>Insertion sort it is very intuitive method of sorting items and we often use it when we play card games. In this case the player often gets an unordered set of playing cards and intuitively starts to sort it. First by taking a card, making some comparisons and then putting the card on the right position.</p>
+<p>So let’s say we have an array of data. In the first step the array is unordered, but we can say that it consists of two sub-sets: sorted and unordered, where on the first step the only item in the sorted sub-set is its first item. If the length of the array is n the algorithm is considered completed in n-1 steps. On each step our sorted subset is growing with one item. The thing is that we take the first item from the unordered sub-set and with some comparisons we put it into its place in the sorted sub-set, like on the diagram bellow.</p>
+<p></p><figure id="attachment_2719" style="width: 620px;" class="wp-caption alignnone"><a href="http://www.stoimen.com/blog/wp-content/uploads/2012/02/InsertionSortPrinciple.png"><img src="http://www.stoimen.com/blog/wp-content/uploads/2012/02/InsertionSortPrinciple.png" alt="Main principle of insertion sort" title="Principle of Insertion Sort" class="size-full wp-image-2719" width="620"></a><figcaption class="wp-caption-text">Main principle of insertion sort.</figcaption></figure><br>
+<span id="more-2711"></span><br>
+The insertion itself is the tricky part. We can insert the item once we find an item with a smaller value or if we have reached the front of the array like on the diagram bellow.<p></p>
+<figure id="attachment_2721" style="width: 620px;" class="wp-caption alignnone"><a href="http://www.stoimen.com/blog/wp-content/uploads/2012/02/InsertionSort.png"><img src="http://www.stoimen.com/blog/wp-content/uploads/2012/02/InsertionSort.png" alt="Insertion sort example" title="Insertion Sort" class="size-full wp-image-2721" width="620"></a><figcaption class="wp-caption-text">Example of insertion sort</figcaption>
+
+<h2>Complexity</h2>
+<p>As I said this algorithm is not so effective. Its complexity is O(n<sup>2</sup>) which is far worse than the O(n*log(n)) of quicksort, as you can see on the diagram bellow. </p>
+<figure id="attachment_2723" style="width: 600px;" class="wp-caption alignnone"><a href="http://www.stoimen.com/blog/wp-content/uploads/2012/02/InsertionSortComplexityChart.png"><img src="http://www.stoimen.com/blog/wp-content/uploads/2012/02/InsertionSortComplexityChart.png" alt="n*n vs. n*log(n)" title="Insertion Sort Complexity Chart" class="size-full wp-image-2723" height="371" width="600"></a><figcaption class="wp-caption-text">n*n vs. n*log(n)</figcaption></figure>
+<h2>Application</h2>
+<p>This algorithm is useful for small sets of data and even if it doesn’t look like the most effective sorting algorithm, insertion sort can be useful for some reasons. First of all it is easy to implement, but it also does not require additional memory and it can be fast if the data is almost nearly sorted, which is great.</p>
+
+source : http://www.stoimen.com/blog/2012/02/13/computer-algorithms-insertion-sort/
